@@ -29,6 +29,11 @@ variable "mymap" {
     }
 }
 
+variable "inputname" {
+    type = string
+    description = "Set the name of the VPC"
+}
+
 resource "aws_vpc" "myvpc" {
     tags = {
         Name = var.vpcname
@@ -48,4 +53,11 @@ resource "aws_vpc" "myvpc2" {
         Name = var.mymap["Key2"]
     }
     cidr_block = "10.0.0.0/18"
+}
+
+resource "aws_vpc" "myvpc3" {
+    tags = {
+        Name = var.inputname
+    }
+    cidr_block = "10.0.0.0/19"
 }
