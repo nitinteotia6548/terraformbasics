@@ -61,3 +61,22 @@ resource "aws_vpc" "myvpc3" {
     }
     cidr_block = "10.0.0.0/19"
 }
+
+output "vpc-id" {
+    value = aws_vpc.myvpc3.id
+}
+
+#example for tuple data type
+variable "mytuple" {
+    type = tuple([string, number, string])
+    default = ["cat", 1, "dog"]
+}
+
+#example for object data type
+variable "myobject" {
+    type = object({name = string, port = list(number)})
+    default = {
+        name = "NT"
+        port = [22, 50, 80]
+    }
+}
