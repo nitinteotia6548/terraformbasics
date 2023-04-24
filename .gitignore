@@ -1,0 +1,4 @@
+/resource-1/.*
+/variables/.*
+/resource-1/terraform.*
+/variables/terraform.*
